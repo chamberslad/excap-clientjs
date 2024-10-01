@@ -1,58 +1,37 @@
-<!--
-This sample web application provides a simple Click-Through Splash page for Cisco Meraki networks.
-Usage:
-* Configure your Cisco Meraki wireless network with a Click-through splash page.
-* Configure the "Custom URL" to point to your webserver that is hosting this HTML file.
-* Update the "Walled Garden" with the IP or Domain Name for your webserver and any supporting resources
-* Add any additional logic to forward the form data to your preferred service. By default, a simple alert
-displays the results of one form entry and then prints the Meraki provided parameters in the the footer. 
-
-Sample URL received from Meraki to this page.
-http://localhost:5000/?base_grant_url=https%3A%2F%2Fn143.network-auth.com%2Fsplash%2Fgrant&user_continue_url=http%3A%2F%2Fspeedof.me%2F&node_id=149624922840090&node_mac=88:15:44:60:1c:1a&gateway_id=149624922840090&client_ip=10.255.60.208&client_mac=f4:5c:89:9b:17:67
-
-
-This is example was written by:
-Cory Guynn
-www.InternetOfLEGO.com
-2016
-
-LICENSE: MIT
-"Have Fun!, use and abuse"
--->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="./css/style.css">
-    </head>
-    <div class="container">  
-      
-      <form id="loginForm" action="#">
-        <p class="copyright">Welcome to Purus Guest WiFi</p>
-        <center><a href="http://www.etg365.co.uk"><img src="./img/purus-logo.png" width="50%"/></a></center>
-        <br>
-        <fieldset>
-          <input id="name" placeholder="Your name" type="text" tabindex="1" required autofocus>
-        </fieldset>
-        <fieldset>
-          <input id="email" placeholder="Your Email Address" type="email" tabindex="2" required>
-        </fieldset>
-        <fieldset>
-          <input id="company" placeholder="Your Company (optional)" type="text" tabindex="3">
-        </fieldset>
-        <fieldset>
-          <button type="submit" >Log in to WiFi</button>
-        </fieldset>
-        <p class="copyright">Purus Guest WiFi Powered by EquiTech Group</a></p>
-        <center><a href="http://www.etg365.co.uk"><img src="./img/etg-logo.png" width="50%"/></a></center>
-      </form>
-    </div>
-    <!-- <hr>
-    <h4>Debugging Stats</h4>
-    <p><label>Base Grant URL: </label><label id="baseGrantURL"></label></p>
-    <p><label>User Continue URL: </label><label id="userContinueURL"></label></p>
-    <p><label>Client IP: </label><label id="clientIP"></label></p>
-    <p><label>Client MAC: </label><label id="clientMAC"></label></p>
-    <p><label>Access Point MAC: </label><label id="nodeMAC"></label></p> -->
-        
-    <script src="./js/meraki.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Captive Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Our Network</h1>
+    <p>Please click the button below to continue.</p>
+    <a href="http://www.example.com" class="button">Continue</a>
+  </div>
+</body>
 </html>
